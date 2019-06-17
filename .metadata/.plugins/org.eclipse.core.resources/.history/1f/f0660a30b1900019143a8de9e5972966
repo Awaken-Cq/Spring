@@ -1,0 +1,18 @@
+package com.kitri.hello4;
+
+import java.util.Scanner;
+
+public class Sum {
+
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+		
+		String n1 = input.next();
+		System.out.println("n1 : " + n1);
+		
+				System.out.println(n1.substring(2,5));
+	}
+
+}
+

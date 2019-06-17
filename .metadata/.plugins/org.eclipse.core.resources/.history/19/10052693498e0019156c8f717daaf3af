@@ -1,0 +1,9 @@
+package com.kitri.hello2;
+
+public class HelloService {
+
+	public String helloEng(String name) {
+		return "Hello, " +  name + " \r\nWelcome:)";
+	}
+	
+}

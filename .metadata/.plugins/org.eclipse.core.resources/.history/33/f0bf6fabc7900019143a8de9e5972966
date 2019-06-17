@@ -1,0 +1,8 @@
+package com.kitri.ditest;
+
+public class DiTest {
+	
+	public static void main(String[] args) {
+		
+	}
+}

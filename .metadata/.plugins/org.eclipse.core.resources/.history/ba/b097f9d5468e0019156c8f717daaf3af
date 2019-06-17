@@ -1,0 +1,13 @@
+package com.kitri.hello1;
+
+public class HelloMain {
+
+	public static void main(String[] agrs) {
+//		HelloServiceKor helloServiceKor = new HelloServiceKor();
+//		String msg = helloServiceKor.hellokor("노정탁");
+		
+		HelloServiceEng helServiceEng
+		
+		System.out.println(msg);
+	}
+}

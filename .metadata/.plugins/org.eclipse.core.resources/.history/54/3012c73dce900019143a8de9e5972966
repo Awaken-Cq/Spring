@@ -1,0 +1,49 @@
+package com.kitri.ditest;
+
+public class AddressDto {
+	
+	private String zipcode;
+	private String addres;
+	private String addressDetail;
+	
+	
+	
+	
+	public AddressDto() {
+	}
+
+
+
+	public AddressDto(String zipcode, String addres, String addressDetail) {
+		super();
+		this.zipcode = zipcode;
+		this.addres = addres;
+		this.addressDetail = addressDetail;
+	}
+
+
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+
+
+	public void setAddres(String addres) {
+		this.addres = addres;
+	}
+
+
+
+	public void setAddressDetail(String addressDetail) {
+		this.addressDetail = addressDetail;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "AddressDto [zipcode=" + zipcode + ", addres=" + addres + ", addressDetail=" + addressDetail + "]";
+	}
+	
+}

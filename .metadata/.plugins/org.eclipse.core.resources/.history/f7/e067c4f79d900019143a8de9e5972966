@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- class가 바뀌면 컴파일을 해야하지만 xml을 바꾸면 아무것도 컴파일 할 수 없다.
+이로써 메인과 service는 완전 독립적으로 변함.
+즉 Spring에 무엇을 바꿀지 말해주면 java단에서는 아무것도 바꾸지 않아도 원하는 변환을
+ 할 수 있음. -->
+<bean id="hs1" class="com.kitri.hello3.HelloServiceKor"/>
+
+<bean id="hs" class="com.kitri.hello3.HelloServiceEng" scope="prototype"/>
+
+<bean id="hd" class="com.kitri.hello3.HelloDao"/>
+
+</beans>

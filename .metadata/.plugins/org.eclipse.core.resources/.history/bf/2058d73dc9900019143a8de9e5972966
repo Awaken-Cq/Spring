@@ -1,0 +1,23 @@
+package com.kitri.ditest;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class DiTest {
+	
+	public static void main(String[] args) {
+		
+		ApplicationContext context = 
+				new ClassPathXmlApplicationContext(
+						"com/kitri/ditest/applicationContext.xml");
+		
+		MemberDto m1 = context.getBean("m1", MemberDto.class);
+		System.out.println("-------------------------m1---------------------------");
+		System.out.println(m1);
+		
+		
+		System.out.println("-------------------------m2---------------------------");
+		System.out.println(m2);
+		
+	}
+}

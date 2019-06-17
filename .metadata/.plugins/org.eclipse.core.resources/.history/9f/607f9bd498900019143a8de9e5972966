@@ -1,0 +1,5 @@
+package com.kitri.hello4;
+
+public class HelloServiceFactory {
+
+}

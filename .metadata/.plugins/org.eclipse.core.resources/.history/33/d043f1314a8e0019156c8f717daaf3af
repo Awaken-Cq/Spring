@@ -1,0 +1,17 @@
+package com.kitri.hello3;
+
+public class HelloServiceKor implements HelloService {
+	
+	
+	public String hellokor(String name) {
+		return name  + "님 안녕하세요:)";
+	}
+
+	@Override
+	public String hello(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

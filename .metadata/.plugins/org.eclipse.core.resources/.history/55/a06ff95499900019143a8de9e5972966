@@ -1,0 +1,11 @@
+package com.kitri.hello4;
+
+public class HelloServiceFactory {
+
+	public HelloService getHelloService() {
+		
+		return new HelloServiceKor();
+	}
+	
+	
+}

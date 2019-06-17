@@ -1,0 +1,13 @@
+package com.kitri.hello3;
+
+public class HelloServiceEng implements HelloService {
+
+
+
+	@Override
+	public String hello(String name) {
+		
+		return "Hello, " +  name + " \r\nWelcome:)";
+	}
+	
+}

@@ -1,0 +1,8 @@
+package com.kitri.hello3;
+
+public interface HelloService {
+	
+	String helloEng(String name);
+	
+	String hellokor(String name);
+}
