@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="wizardPage">
 		<list key="groupId">
+			<item value="hellospringmvc"/>
 			<item value="membermybatis"/>
 			<item value="hellospring"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="hellospringmvc"/>
 			<item value="membermybatis"/>
 			<item value="hellospring"/>
 		</list>
