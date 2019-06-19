@@ -1,2 +1,2 @@
-# Kitri_Spring
+# Spring
 learning a Spring
