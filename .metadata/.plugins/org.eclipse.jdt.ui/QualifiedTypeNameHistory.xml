@@ -34,4 +34,7 @@
 <fullyQualifiedTypeName name="com.kitri.hello.model.dao.HelloDao"/>
 <fullyQualifiedTypeName name="com.kitri.hello.model.service.HelloService"/>
 <fullyQualifiedTypeName name="org.springframework.web.context.ContextLoaderListener"/>
+<fullyQualifiedTypeName name="com.kitri.member.model.MemberDetailDto"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="org.springframework.web.filter.CharacterEncodingFilter"/>
 </qualifiedTypeNameHistroy>

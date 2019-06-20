@@ -1,0 +1,96 @@
+select count(id)
+from member 
+where id = ?
+
+
+select 	case
+		when length(new_post_code) = 4 then '0'||new_post_code 
+		else new_post_code 
+	end zipcode,  
+	sido_kor sido, gugun_kor gugun,  
+	nvl(upmyon_kor, ' ') upmyon, doro_kor doro,  
+	case 
+		when building_refer_number != '0' 
+		then building_origin_number||'-'||building_refer_number  
+		else trim(to_char(building_origin_number, '99999')) 
+	end building_number, sigugun_building_name 
+from postcode 
+where doro_kor like '%'||?||'%' 
+or sigugun_building_name like '%'||?||'%'
+
+
+
+insert all
+	into member (id, name, pass, emailid, emaildomain, joindate)
+	values (?, ?, ?, ?, ?, sysdate)
+	into member_detail (id, zipcode, address, address_detail, tel1, tel2, tel3)
+	values (?, ?, ?, ?, ?, ?, ?)
+select * from dual
+
+
+
+select name, id, emailid, emaildomain, joindate 
+from member 
+where id = ? and pass = ?
+
+
+
+
+
+
+------------------------------------------------------
+	List<MemberDetailDto> list = new ArrayList<MemberDetailDto>();
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String name = null;
+		try {
+			conn = DBConnection.makeConnection();
+
+			StringBuffer sql = new StringBuffer();
+			sql.append("select m.name, m.id, m.emailid, m.emaildomain, m.joindate, \n");
+			sql.append("		d.tel1, d.tel2, d.tel3, d.zipcode, d.address, d.address_detail \n");
+			sql.append("from member m, member_detail d \n");
+			sql.append("where m.id = d.id \n");
+			String key = map.get("key");
+			String word = map.get("word");
+			if(word != null && !word.isEmpty()) {
+				//아이디(equals)는 정확, 전화번호와 주소(like)는 포함여부
+				if("id".equals(key)) {
+					sql.append("and m.id = ? \n");
+				}else {
+					sql.append("and d." + key + " like '%'||?||'%' \n");
+				}
+			}
+			
+			
+			pstmt = conn.prepareStatement(sql.toString());
+			if(word != null && !word.isEmpty()) {
+			pstmt.setString(1, word);
+			}
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberDetailDto	memberDetailDto = new MemberDetailDto();
+				memberDetailDto.setName(rs.getString("name"));
+				memberDetailDto.setId(rs.getString("id"));
+				memberDetailDto.setEmailid(rs.getString("emailid"));
+				memberDetailDto.setEmaildomain(rs.getString("emaildomain"));
+				memberDetailDto.setJoindate(rs.getString("joindate"));
+				memberDetailDto.setTel1(rs.getString("tel1"));
+				memberDetailDto.setTel2(rs.getString("tel2"));
+				memberDetailDto.setTel3(rs.getString("tel3"));
+				memberDetailDto.setZipcode(rs.getString("zipcode"));
+				memberDetailDto.setAddress(rs.getString("address"));
+				memberDetailDto.setAddressDetail(rs.getString("address_detail"));
+				
+				list.add(memberDetailDto);
+			}
+
+
+
+
+
+
