@@ -20,24 +20,26 @@ if(cookie != null){
 <script type="text/javascript">
 	$(document).ready(function() {
 
+			$("#loginBtn").click(function(){
+				if ($("#id").val().trim().length == 0) {
+					alert("아이디를 입력하시오!");
+				} else if ($("#pass").val().trim().length == 0) {
+					alert("비밀번호를 입력하시오!");
+				} else {
+					
+					$("#loginform").attr("action", "${root}/user/login.kitri").submit();
+				}
+				
+			});
+
+			$("#moveRegisterBtn").click(function(){
+				$(location).attr("href","${root}/user/register.kitri");
+				
+			});
+		
 	});
 
-	function login() {
 
-		if (document.getElementById("id").value == "") {
-			alert("아이디를 입력하시오!");
-		} else if (document.getElementById("pass").value == "") {
-			alert("비밀번호를 입력하시오!");
-		} else {
-			
-			document.getElementById("loginform").action = "${root}/user";
-			document.getElementById("loginform").submit();
-		}
-	}
-
-	function mvjoin() {
-	document.location.href = "${root}/user?act=mvjoin";
-	}
 </script>
 </head>
 <body>
@@ -46,7 +48,6 @@ if(cookie != null){
 		<div class="col-lg-6" align="center">
 			<h2>로그인</h2>
 			<form id="loginform" method="post" action="">
-				<input type="hidden" name="act" value="login">
 				<div class="form-group" align="right">
 					<label for=""><input type="checkbox" class="form-control"
 						name="idsave" value="idsave" <%=ckid%> placeholder="">아이디저장</label> 
@@ -60,10 +61,8 @@ if(cookie != null){
 						class="form-control" id="pass" name="pass" placeholder="">
 				</div>
 				<div class="form-group" align="center">
-					<button type="button" class="btn btn-warning" id="loginBtn"
-						onclick="javascript:login();">로그인</button>
-					<button type="button" class="btn btn-primary" id="moveRegisterBtn"
-						onclick="javascript:mvjoin();">회원가입</button>
+					<button type="button" class="btn btn-warning" id="loginBtn">로그인</button>
+					<button type="button" class="btn btn-primary" id="moveRegisterBtn">회원가입</button>
 				</div>
 			</form>
 		</div>

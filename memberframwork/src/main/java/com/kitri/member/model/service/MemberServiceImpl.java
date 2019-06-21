@@ -70,13 +70,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDto loginMember(String id, String pass) {
-		Map<String, String> loginInfo = new HashMap<String, String>();
-		loginInfo.put("userid",  id);
-		loginInfo.put("userpwd", pass);
-		
-		
-		return memberDao.loginMember(loginInfo);
+	public MemberDto loginMember(Map<String, String> map) {
+//		Map<String, String> loginInfo = new HashMap<String, String>();
+//		loginInfo.put("userid",  id);
+//		loginInfo.put("userpwd", pass);		
+		return memberDao.loginMember(map);
 	}
 
 	@Override

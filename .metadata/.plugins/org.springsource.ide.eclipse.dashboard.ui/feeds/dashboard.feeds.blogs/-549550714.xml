@@ -5,7 +5,20 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-06-20T07:38:59Z</updated>
+  <updated>2019-06-21T07:23:20Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: IBM's Pratik Patel on Java, Functions-as-a-service, cloud infrastructure, Spring and Devnexus</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/06/21/a-bootiful-podcast-ibm-s-pratik-patel-on-java-functions-as-a-service-cloud-infrastructure-spring-and-devnexus" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-06-21:3726</id>
+    <updated>2019-06-21T07:23:20Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! This week &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; speaks to &lt;a href="http://twitter.com/PrPatel"&gt;@IBM&amp;rsquo;s Pratik Patel (@prpatel)&lt;/a&gt; about function-as-a-service, Spring Cloud Function, Spring, Java and Devnexus&lt;/p&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/639959205&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tool Suite 3.9.9 released</title>
     <link rel="alternate" href="https://spring.io/blog/2019/06/20/spring-tool-suite-3-9-9-released" />
@@ -220,7 +233,7 @@
   &lt;li&gt;You know what&amp;rsquo;s really interesting? The idea that we could &lt;a href="https://spring.io/blog/2019/06/12/spring-tips-spring-s-support-for-kotlin-coroutines"&gt;Spring Tips: Spring&amp;rsquo;s Support for Kotlin Coroutines&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://spring.io/blog/2019/06/12/java-cfenv-1-1-0-rc1-released"&gt;Java CFEnv 1.1.0.RC1 Released&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=kJst_Tsl9cw"&gt;Spring Data team member Jens Schauder did a nice talk introducing Spring Data JPA&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://store.pivotal.io/collections/all-products/products/pivotal-spring-mens-shirt-grey-updated?utm_campaign=pivotal-website-social&amp;utm_medium=social-sprout&amp;utm_source=twitter&amp;utm_content=1560324206"&gt;Periodic reminder that we have Pivotal schwag? How cool is that?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://store.pivotal.io/"&gt;Periodic reminder that we have Pivotal schwag? How cool is that?&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1140655846688514048"&gt;Hey! Pivotal have support for OpenJDK, Spring, Tomcat and more.&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href="https://medium.com/digitalfrontiers/how-to-customize-the-spring-initializr-2439ecabb069"&gt;How to customize the Spring Initializr ? Digital Frontiers???Das Blog ? Medium&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Yet another exciting installment of one of my favorite &lt;em&gt;This $INTERVAL In&lt;/em&gt; blogs: &lt;a href="https://www.rabbitmq.com/blog/2019/06/06/this-month-in-rabbitmq-june-2019/"&gt;This Month in RabbitMQ ? June 2019&lt;/a&gt;&lt;/li&gt;
@@ -1104,30 +1117,6 @@ dependencies {&#xD;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - June 11th, 2019</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/06/10/this-week-in-spring-june-11th-2019" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2019-06-10:3706</id>
-    <updated>2019-06-10T23:21:46Z</updated>
-    <content type="html">&lt;p&gt;Hi Spring fans! Can you &lt;em&gt;believe&lt;/em&gt; it? We&amp;rsquo;re already almost halfway through June! Summer&amp;rsquo;s nearly here! It&amp;rsquo;s &lt;em&gt;97 Fahrenheit&lt;/em&gt; / 37 Celsius in San Francisco! That&amp;rsquo;s &lt;em&gt;nuts&lt;/em&gt;! I&amp;rsquo;m glad I&amp;rsquo;m in beautiful Amsterdam and Eindhoven, NL, beating the heat, though. What a privilege. We&amp;rsquo;ve got a busy week, as always, to get to so let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;The Spring team has undertaken a massive effort to eliminate insecure HTTP URLs in favor of HTTPS. Learn how we did it (and you could too) in this blog &lt;a href="https://spring.io/blog/2019/06/10/announcing-nohttp"&gt;&lt;em&gt;Announcing nohttp&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/06/07/a-bootiful-podcast-spring-cloud-lead-spencer-gibb-on-microservices-brazil-and-more"&gt;A Bootiful Podcast: Spring Cloud lead Spencer Gibb on Microservices, Brazil, and more&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Hi Spring fans! In last week&amp;rsquo;s installment of &lt;a href="https://spring.io/blog/2019/06/05/spring-tips-organizational-consistency-in-your-spring-boot-applications"&gt;Spring Tips: Organizational Consistency in your Spring Boot Applications&lt;/a&gt; I introduced things you can do to achieve consistency in your applications including auto-configuration, building starter-dependencies, the Spring JavaFormat Maven plugin and more.&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/06/05/react-ing-to-start-spring-io-user-feedback-updates"&gt;React-ing to start.spring.io User feedback updates&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="https://dzone.com/articles/kotlin-microservice-with-spring-boot"&gt;Kotlin Microservice With Spring Boot Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I dig this article on &lt;a href="https://dzone.com/articles/how-to-bootstrap-a-spring-boot-application-maven-p"&gt;how to bootstrap a Spring Boot application with Maven&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;An oldie-but-a-goodie: &lt;a href="https://dzone.com/articles/spring-boot-a-work-of-art"&gt;Spring Boot: A Work of Art&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is sort of awesome. Remember ZK? You can use with Spring Boot! Learn how in this &lt;a href="https://dzone.com/articles/zk-spring-boot"&gt;&amp;ldquo;Using ZK With Spring Boot&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I love this nice post on &lt;a href="https://dzone.com/articles/apache-rocketmq-how-did-we-lowered-latency"&gt; how the Alibaba team lwered latency for Apache RocketMQ&lt;/a&gt;. Also of note: there&amp;rsquo;s a super-slick integration for Apache RocketMQ in Spring Cloud Alibaba. Check it out!&lt;/li&gt;
-  &lt;li&gt;Do &lt;em&gt;not&lt;/em&gt; miss this replay of Olga Maciaszek and Marcin Grzejszczak&amp;rsquo;s Spring I/O talk, &lt;a href="https://twitter.com/springcloud/status/1136290826269679617"&gt;&lt;em&gt;How to live in a post Spring Cloud Netflix world&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/template/header.jsp"%>
 <script type="text/javascript">
-$(document).ready(function() {
+$(function() {
 	
 	memberList('', '');
 
@@ -17,16 +17,36 @@ $(document).ready(function() {
 
 function memberList(key, word){
 	$("#mlist").empty();
+	
 	$.ajax({
-			url : "${root}/admin",
+			url : "${root}/admin/memberlist.kitri",
 			type : "get",
-			dataType : "xml",
-			data : "act=getmemberlist&key=" + key + "&word="
-					+ word,
+			dataType : "JSON",
+			data : {"key" : key, "word" : word},
 			timeout : 30000,
 			cache : false,
-			success : function(xml) { // 성공  
-				var member = $(xml).find("member");
+			success : function(data) { // 성공  
+			var list = data.list;
+				console.log("console : " + list.toString());
+				
+				var len = list.length;
+				for(var i = 0;i<len;i++){
+					var id = list[i].id;
+					var name = list[i].name;
+					var email = list[i].emailid;
+					var tel = list[i].tel1 + "-" + list[i].tel2 + "-" + list[i].tel3;
+					var address = list[i].address;
+					var joindate = list[i].joindate;
+
+					var tr = $("<tr>").attr("class", "table-active");
+					var td1 = $("<td>").html(id);
+					var td2 = $("<td>").html(name);
+					var td3 = $("<td>").html(email);
+					var td4 = $("<td>").html(tel);
+					var td5 = $("<td>").html(address);
+					var td6 = $("<td>").html(joindate);
+					
+				/* var member = $(xml).find("member");
 			
 				for(var i = 0;i<member.length;i++){
 				var id = $(member[i]).find("id").text();
@@ -42,11 +62,11 @@ function memberList(key, word){
 				var td3 = $("<td>").html(email);
 				var td4 = $("<td>").html(tel);
 				var td5 = $("<td>").html(address);
-				var td6 = $("<td>").html(joindate);
+				var td6 = $("<td>").html(joindate); */
 
 				tr.append(td1).append(td2).append(td3).append(td4).append(td5).append(td6);
 				$("#mlist").append(tr);
-				}
+				}  
 			}
 		
 		});

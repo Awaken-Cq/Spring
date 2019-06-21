@@ -2,5 +2,6 @@
 <aop-reference-model>
 <aop-project name="hellospringmvc"/>
 <aop-project name="memberframwork"/>
+<aop-project name="cafe"/>
 <aop-project name="hellospring"/>
 </aop-reference-model>
