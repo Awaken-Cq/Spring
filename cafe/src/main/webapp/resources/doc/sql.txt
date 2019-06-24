@@ -1,0 +1,9 @@
+Reboard insert
+
+insert all
+into board(seq, name, id, email, subject, content, hit, logtime, bcode)
+values(board_seq.nextval, 'kitri', 'kitri', 'kitri@gmail.com', 'Insert All', 'Inser All into tablename() values() into tablename() values()',0,sysdate,4 )
+into reboard(rseq, seq, ref, lev, step, pseq, reply)
+values(REBOARD_RSEQ.nextval, board_seq.currval,0,0,0,0,0)
+select *
+from dual;

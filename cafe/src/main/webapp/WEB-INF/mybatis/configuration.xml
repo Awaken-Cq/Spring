@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.kitri.cafe.admin.board.model.CategoryDto" alias="categoryDto"/>
+		<typeAlias type="com.kitri.cafe.admin.board.model.BoardTypeDto" alias="boardTypeDto"/>
+		<typeAlias type="com.kitri.cafe.admin.board.model.BoardListDto" alias="boardListDto"/>
+		<typeAlias type="com.kitri.cafe.board.model.AlbumDto" alias="albumDto"/>
+		<typeAlias type="com.kitri.cafe.board.model.BbsDto" alias="bbsDto"/>
+		<typeAlias type="com.kitri.cafe.board.model.BoardDto" alias="boardDto"/>
+		<typeAlias type="com.kitri.cafe.board.model.MemoDto" alias="memoDto"/>
+		<typeAlias type="com.kitri.cafe.board.model.ReboardDto" alias="reboardDto"/>
+	</typeAliases>
+</configuration>
