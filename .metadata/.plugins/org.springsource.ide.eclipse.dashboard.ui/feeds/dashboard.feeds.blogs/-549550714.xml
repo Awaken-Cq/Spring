@@ -5,7 +5,40 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-06-21T07:23:20Z</updated>
+  <updated>2019-06-21T18:00:08Z</updated>
+  <entry>
+    <title>Spring Tools 4.3.0 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/06/21/spring-tools-4-3-0-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2019-06-21:3727</id>
+    <updated>2019-06-21T18:00:08Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.3.0 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Theia.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse Theia vs Atom)&lt;/em&gt; Eclipse Theia now officially supported, Atom support deprecated&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: project classpath notifications now happen in batch on startup to further optimize performance and job load on the Eclipse side&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; improvement: symbols are now being re-created if dependent types change&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; fixed: Slow code completion takes more than a 1 sec. (&lt;a href="https://github.com/spring-projects/sts4/issues/293"&gt;#293&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; fixed: content-assist for Spring XML config files now working again in VS Code and Theia&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; fixed: Anonymous inner type beans don&amp;rsquo;t have boot hints&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(CF Manifest)&lt;/em&gt; fixed: CF manifest editor supports manifest files with number of instances set to zero&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Concourse)&lt;/em&gt; fixed: Added support for &lt;code&gt;vars&lt;/code&gt; property in task step&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: quickly restarting apps in boot dashboard multiple times could cause failures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Theia, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2019-06-21-430-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2019-06-21-430-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.3.1 is scheduled to be released in late July 2019.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;P.S.: Due to a system outage, the update to the tools web page will take a little longer, please go to &lt;a href="https://github.com/spring-projects/sts4/wiki/Installation"&gt;https://github.com/spring-projects/sts4/wiki/Installation&lt;/a&gt; in the meantime for details about the new Theia packages.&lt;/em&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: IBM's Pratik Patel on Java, Functions-as-a-service, cloud infrastructure, Spring and Devnexus</title>
     <link rel="alternate" href="https://spring.io/blog/2019/06/21/a-bootiful-podcast-ibm-s-pratik-patel-on-java-functions-as-a-service-cloud-infrastructure-spring-and-devnexus" />
@@ -54,16 +87,9 @@
       <name>Josh Cummings</name>
     </author>
     <id>tag:spring.io,2019-06-19:3724</id>
-    <updated>2019-06-19T21:13:41Z</updated>
+    <updated>2019-06-19T21:13:00Z</updated>
     <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;We have &lt;a href="https://github.com/spring-projects/spring-security/milestone/146"&gt;released Spring Security 4.2.13&lt;/a&gt; to address "CVE-2019-11272: PlaintextPasswordEncoder authenticates encoded passwords that are null":&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="quoteblock"&gt;
-&lt;blockquote&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Spring Security, versions 4.2.x up to 4.2.12, and older unsupported versions support plain text passwords using PlaintextPasswordEncoder. If an application using an affected version of Spring Security is leveraging PlaintextPasswordEncoder and a user has a null encoded password, a malicious user (or attacker) can authenticate using a password of ¡°null¡±.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;We have &lt;a href="https://github.com/spring-projects/spring-security/milestone/146"&gt;released Spring Security 4.2.13&lt;/a&gt; to address &lt;a href="https://pivotal.io/security/cve-2019-11272"&gt;CVE-2019-11272: PlaintextPasswordEncoder authenticates encoded passwords that are null&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;Users are encouraged to update immediately.&lt;/p&gt;
@@ -1076,47 +1102,6 @@ dependencies {&#xD;
     <content type="html">&lt;p&gt;Hi Spring fans! In this week&amp;rsquo;s installment Josh Long (@starbuxman) looks at Kotlin&amp;rsquo;s new support for coroutines (&amp;ldquo;Koroutines&amp;rdquo;?) and the rich integrations in Spring.&lt;/p&gt;
 &lt;p&gt;speaker: &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman) &lt;/a&gt;&lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/3xu5xttCrVk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Java CFEnv 1.1.0.RC1 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/06/12/java-cfenv-1-1-0-rc1-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Mark Pollack</name>
-    </author>
-    <id>tag:spring.io,2019-06-12:3708</id>
-    <updated>2019-06-12T15:58:00Z</updated>
-    <content type="html">&lt;div class="sect1"&gt;
-&lt;h2 id="introduction"&gt;&lt;a class="anchor" href="#introduction"&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community I am happy to announce the release of Java CFEnv 1.1 RC1.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The RC1 release adds the following functionality:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Checks the classpath to correctly determine setting of MySQL or MariaDB driver class name.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;When using the Boot support, an exception is thrown if the Spring Cloud Connector library is on the classpath.  This applies only for the following services: DataSource, RabbitMQ, Cassandra, MongoDB, and Redis.  The exception message indicates to set the environment variable &lt;code&gt;JBP_CONFIG_SPRING_AUTO_RECONFIGURATION '{enabled: false}'&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for Boot 1.5.x by copying a logging utility class into the project.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The project &lt;a href="https://github.com/pivotal-cf/java-cfenv/blob/master/README.adoc"&gt;README&lt;/a&gt; has more information.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;The GA release is planned for next week. Please try it out and give feedback on our &lt;a href="https://github.com/pivotal-cf/java-cfenv/issues"&gt;github issues&lt;/a&gt; page.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
