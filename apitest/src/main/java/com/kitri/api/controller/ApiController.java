@@ -27,6 +27,7 @@ public class ApiController {
 			System.out.println("entered");
 			logger.info(msg);
 			String apikey = "qldeV%2BL5Ff%2BFi%2BJisZxRFyc1KDitxcPmNkhuwOjk6c7xQDVITEe0oDrh3XFd98iqnW89ky8RMDhQkQIb48h3%2BQ%3D%3D";
+			String tourapikey = "";
 			String result = apiexc(apikey);
 			
 			
