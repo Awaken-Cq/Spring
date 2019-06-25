@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<list key="installedFeatures">
 		<item value="com.ianbrandt.tools.m2e.mdp.feature:0.0.4.201409291703"/>
+		<item value="com.tomato.exerd.feature:3.2.0.20190617-1407"/>
 		<item value="org.aspectj:1.9.2.201902212122"/>
 		<item value="org.eclipse.ajdt:2.2.4.201902212122"/>
 		<item value="org.eclipse.buildship:3.0.2.v20181217-2322-s"/>
@@ -102,6 +103,10 @@
 		<item value="org.springsource.sts:3.9.8.201903260800-RELEASE"/>
 	</list>
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="F:\Javadata\workspace\spring\HotPicks-mine\hotpicks"/>
+		<item value="F:\Javadata\workspace\spring\memberframwork"/>
+		<item value="F:\Javadata\workspace\spring\apitest"/>
+		<item value="F:\Javadata\workspace\spring\cafe"/>
 		<item value="D:\workplace\spring\apitest"/>
 	</list>
 	<section name="NewWizardAction">
@@ -116,5 +121,9 @@
 		<item key="DIALOG_WIDTH" value="500"/>
 		<item key="DIALOG_HEIGHT" value="401"/>
 		<item key="TOGGLE_SELECTED" value="false"/>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="546"/>
+		<item key="DIALOG_Y_ORIGIN" value="332"/>
 	</section>
 </section>
