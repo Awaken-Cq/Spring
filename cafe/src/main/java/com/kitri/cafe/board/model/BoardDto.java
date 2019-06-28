@@ -84,4 +84,11 @@ public class BoardDto {
 		this.bcode = bcode;
 	}
 
+	@Override
+	public String toString() {
+		return "BoardDto [seq=" + seq + ", id=" + id + ", name=" + name + ", email=" + email + ", subject=" + subject
+				+ ", content=" + content + ", hit=" + hit + ", logtime=" + logtime + ", bcode=" + bcode + "]";
+	}
+
+	
 }

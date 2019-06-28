@@ -41,7 +41,7 @@
                                 	AND b.${key} = #{word}
                                 	</if>
                                 </if>
-                                ORDER BY ref desc, step)z
+                                ORDER BY logtime DESC)z
                      WHERE rownum &lt;= #{end})x        
 	WHERE x.rang &gt; #{start}
   	</select>

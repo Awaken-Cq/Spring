@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/commons/template/top.jsp" %>
+<%@ include file="/WEB-INF/views/commons/logincheck.jsp" %>
+<%@ include file="/WEB-INF/views/commons/board_common.jsp" %>
 <script type="text/javascript">
 $(document).ready(function(){
 	
@@ -50,7 +52,7 @@ $(document).ready(function(){
 	style="margin: 0px">
 <div id="attach_file_hdn"></div>
 
-<input type="hidden" name="bcode" value="${parameter.bcode }">
+<input type="hidden" name="bcode" value="${parameter.bcode}">
 <input type="hidden" name="pg" value="1">
 <input type="hidden" name="key" value="">
 <input type="hidden" name="word" value="">

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.kitri.cafe.board.dao.ReboardDao;
+import com.kitri.cafe.board.model.BoardDto;
 import com.kitri.cafe.board.model.ReboardDto;
 import com.kitri.cafe.common.dao.CommonDao;
 import com.kitri.util.CafeConstance;
@@ -55,6 +56,24 @@ public class ReboardServiceImpl implements ReboardService {
 	public void deleteArticle(int seq) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public ReboardDto getArticle(int seq) {
+		return sqlSession.getMapper(ReboardDao.class).viewArticle(seq);
+	}
+
+	@Override
+	@Transactional
+	public int replyArticle(ReboardDto reboardDto) {
+		ReboardDao reboardDao = sqlSession.getMapper(ReboardDao.class);
+		//update
+		reboardDao.updateStep(reboardDto);
+		//insert
+		reboardDao.replyArticel(reboardDto);
+		//update
+		reboardDao.updateReply(reboardDto.getPseq());
+		return reboardDto.getSeq();
 	}
 
 }

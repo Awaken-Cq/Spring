@@ -23,4 +23,13 @@ public interface ReboardDao {
 	//글삭제
 	void deleteArticle(int seq);
 	
+	
+	//답글을 위한 프로세스 update - insert - update
+	//원글의 ref와 원글의 step필요 -> 각각의 step 1씩 증가.
+	void updateStep(ReboardDto reboardDto);
+	//답글 insert.
+	int replyArticel(ReboardDto reboardDto);
+	//원글의 reply 증가.
+	void updateReply(int pseq);
+	
 }

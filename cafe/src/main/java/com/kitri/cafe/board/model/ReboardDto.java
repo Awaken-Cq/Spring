@@ -57,4 +57,10 @@ public class ReboardDto extends BoardDto {
 		this.reply = reply;
 	}
 
+	@Override
+	public String toString() {
+		return "ReboardDto [rseq=" + rseq + ", ref=" + ref + ", lev=" + lev + ", step=" + step + ", pseq=" + pseq
+				+ ", reply=" + reply + "]";
+	}
+
 }

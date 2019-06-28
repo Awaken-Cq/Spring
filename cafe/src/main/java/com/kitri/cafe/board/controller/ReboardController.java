@@ -40,6 +40,7 @@ public class ReboardController {
 	
 	@RequestMapping(value="/write", method=RequestMethod.POST)
 	public String write(ReboardDto reboardDto, @RequestParam Map<String, String> parameter, Model model, HttpSession session) {
+		logger.info("writepost :" + parameter);
 		String path="";
 		MemberDto memberDto = (MemberDto)session.getAttribute("userInfo");
 		
@@ -63,12 +64,14 @@ public class ReboardController {
 		}else{
 			path = "reboard/writefail";
 		}
+		model.addAttribute("parameter", parameter);
 		return path;
 	}
 	
 	@RequestMapping(value="/view", method=RequestMethod.GET)
 	public String view(@RequestParam("seq") int seq,
 			@RequestParam Map<String, String> parameter, Model model, HttpSession session) {
+		logger.info("viewget :" + parameter);
 		String path = "";
 		
 		//로그인 검사
@@ -95,9 +98,8 @@ public class ReboardController {
 	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public void list(@RequestParam Map<String, String> parameter, Model model, HttpServletRequest request) {
-		logger.info("key :" + parameter);
-		logger.info("key :" + parameter.get("key"));
-		logger.info("key :" + parameter.get("word"));
+		logger.info("listget :" + parameter);
+
 		List<ReboardDto> list = reboardService.listArticle(parameter);
 		PageNavigation pageNavigation = commonService.getPageNavigation(parameter);
 		pageNavigation.setRoot(request.getContextPath());
@@ -107,5 +109,61 @@ public class ReboardController {
 		model.addAttribute("articleList",list);
 		model.addAttribute("navigator", pageNavigation);
 		
+	}
+	
+	@RequestMapping(value="/reply", method=RequestMethod.GET)
+	public String reply(@RequestParam("seq") int seq, HttpSession session,
+						@RequestParam Map<String, String> parameter, Model model) {
+		logger.info("replyget :" + parameter);
+		String path = "";
+		
+		//로그인 검사
+		MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+		if(memberDto != null) {
+			//조횟수 선 증가
+			//commonService.updateHit(seq);
+			//조횟수 증가시킨 reboardDto select
+			ReboardDto reboardDto = reboardService.getArticle(seq);
+			//dto null검사
+			//생략
+			model.addAttribute("article", reboardDto);
+			model.addAttribute("parameter",parameter);
+			logger.info("replyget :" + parameter);
+			logger.info("replyget :" + reboardDto.getBcode() + reboardDto.toString() + reboardDto.getRef());
+			path = "reboard/reply";
+		}else {
+			path = "redirect:/index.jsp";
+		}
+		return path;
+	}
+	
+	@RequestMapping(value="/reply", method=RequestMethod.POST)
+	public String reply(ReboardDto reboardDto, @RequestParam Map<String, String> parameter, Model model, HttpSession session) {
+		logger.info("replypost :" + parameter);
+		logger.info("replypost :" + reboardDto);
+		String path="";
+		MemberDto memberDto = (MemberDto)session.getAttribute("userInfo");
+		
+		if(memberDto != null) {
+		int seq = commonService.getNextSeq();
+		reboardDto.setSeq(seq);;
+		reboardDto.setId(memberDto.getId());
+		reboardDto.setName(memberDto.getName());
+		reboardDto.setEmail(memberDto.getEmail());
+		
+		seq = reboardService.replyArticle(reboardDto);
+		
+			if(seq != 0) {
+				model.addAttribute("seq",seq);
+				model.addAttribute("parameter", parameter);
+				path = "reboard/writeok";
+			}else{
+				path = "reboard/writefail";
+			}
+		}else{
+			path = "reboard/writefail";
+		}
+		System.out.println("reply post");
+		return path;
 	}
 }

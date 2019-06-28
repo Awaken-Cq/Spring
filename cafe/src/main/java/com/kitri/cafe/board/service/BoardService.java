@@ -21,4 +21,6 @@ public interface BoardService {
 	
 	//글삭제
 	void deleteArticle(int seq);
+	
+
 }

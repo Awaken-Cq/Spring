@@ -50,7 +50,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.kitri.cafe.board.dao.ReboardDao"/>
 <fullyQualifiedTypeName name="com.kitri.cafe.common.dao.CommonDao"/>
-<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.kitri.util.PageNavigation"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="com.kitri.util.CafeConstance"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 </qualifiedTypeNameHistroy>
