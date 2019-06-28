@@ -1,6 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/commons/template/top.jsp" %>
+<%@ include file="/WEB-INF/views/commons/logincheck.jsp" %> 
+<%@ include file="/WEB-INF/views/commons/board_common.jsp" %> 
+<script>
+$(document).ready(function(){
+	
+	$(".moveWriteBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("1");
+		$("#key").val("");
+		$("#word").val("");
+		$("#seq").val("");
+		$("#commonForm").attr("method","GET").attr("action","${root}/reboard/write").submit();
+	});
+
+	
+	
+	$(".moveReplyBtn").click(function(){
+		
+		
+	});
+	
+	$(".listBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("${pg}");
+		$("#key").val("${key}");
+		$("#word").val("${word}");
+		$("#commonForm").attr("method","GET").attr("action","${root}/reboard/list").submit();
+		
+	});
+	
+	$(".firstListBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("1");
+		$("#key").val("");
+		$("#word").val("");
+		$("#commonForm").attr("method","GET").attr("action","${root}/reboard/list").submit();
+		
+	});
+	
+});
+</script>
 <!-- title -->
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
@@ -20,16 +64,25 @@
 	<form name="bbsForm" id="bbsbbs" method="post"><input
 		type="hidden" name="" value="">
 	<tr>
-		<td valign="bottom" nowrap><a href=""><img
-			src="${root}/img/board/btn_write_01.gif" width="64" height="22"
-			border="0" align="absmiddle" alt="글쓰기"></a> <a
-			href="javascript:check_reply();"><img
-			src="${root}/img/board/btn_reply.gif" width="40" height="22"
-			border="0" align="absmiddle" alt="답글"></a></td>
+		<td valign="bottom" nowrap>
+			<img src="${root}/img/board/btn_write_01.gif" class="moveWriteBtn" width="64" height="22"
+			border="0" align="absmiddle" alt="글쓰기">
+			<img src="${root}/img/board/btn_reply.gif" class="moveReplyBtn" width="40" height="22"
+			border="0" align="absmiddle" alt="답글">
+		<c:if test="${userInfo.id == article.id }">
+			<img src="${root}/img/board/btn_delete.gif" class="moveModifyBtn" width="64" height="22"
+			border="0" align="absmiddle" alt="글수정">
+			<img src="${root}/img/board/btn_modify.gif" class="moveDeleteBtn" width="40" height="22"
+			border="0" align="absmiddle" alt="글삭제">
+		</c:if>
+		</td>
 		<td valign="bottom" width="100%" style="padding-left: 4px"></td>
-		<td align="right" nowrap valign="bottom"><a
-			href="javascript:goPage(1);">최신목록</a> <font color="#c5c5c5">|</font>
-		<a href="javascript:goPage();">목록</a> <font color="#c5c5c5">|</font>
+		
+		<td align="right" nowrap valign="bottom">
+		<label class="firstListBtn">최신목록</label>
+		<font color="#c5c5c5">|</font>
+		<label class="listBtn">목록</label>
+		<font color="#c5c5c5">|</font>
 
 		<a href="javascript:goBbsRead();"><img
 			src="${root}/img/board/icon_up.gif" border="0" align="absmiddle"
@@ -50,7 +103,7 @@
 	</tr>
 	<tr height="28">
 		<td class="bg_board_title" colspan="2" style="padding-left: 14px">
-		<b><font class="text"> 제목을 출력 부분 </font></b></td>
+		<b><font class="text">${article.subject }</font></b></td>
 	</tr>
 	<tr>
 		<td class="bg_board_title_02" colspan="2" height="1"
@@ -58,14 +111,14 @@
 	</tr>
 	<tr height="26">
 		<td width="100%" style="padding-left: 14px"><font class="stext">번호
-		:</font> <font class="text_commentnum">글 번호를 출력 하는 부분</font> &nbsp; <font
+		:</font> <font class="text_commentnum">${article.seq }</font> &nbsp; <font
 			class="stext">글쓴이 :</font> <a href="javascript:;"
-			onClick="showSideView();" class="link_board_02">글쓴이를 출력 하는 부분</a><br>
+			onClick="showSideView();" class="link_board_02">${article.name }</a><br>
 		</td>
 		<td style="padding-right: 14px" nowrap class="stext">조회 : <font
-			class="text_commentnum">조회수를 출력 하는 부분</font> &nbsp; 스크랩 : <font
+			class="text_commentnum">${article.hit }</font> &nbsp; 스크랩 : <font
 			class="text_commentnum">0</font> &nbsp; 날짜 : <font
-			class="text_commentnum">날짜 출력하는 부분</font></td>
+			class="text_commentnum">${article.logtime }</font></td>
 	</tr>
 	<tr>
 		<td class="bg_board_title_02" colspan="2" height="1"
@@ -80,7 +133,7 @@
 
 
 
-		<P>글 내용이 들어 오는 부분</P>
+		<P>${article.content }</P>
 
 
 
@@ -104,20 +157,24 @@
 		<td colspan="3" height="5" style="padding: 0px"></td>
 	</tr>
 	<tr valign="top">
-		<td nowrap><a href=""><img
-			src="${root}/img/board/btn_write_01.gif" width="64" height="22"
-			border="0" align="absmiddle" alt="글쓰기"></a> <a
-			href="javascript:check_reply();"><img
-			src="${root}/img/board/btn_reply.gif" width="40" height="22"
-			border="0" align="absmiddle" alt="답글"></a></td>
+		<td nowrap>
+			<img src="${root}/img/board/btn_write_01.gif" class="moveWriteBtn" width="64" height="22"
+			border="0" align="absmiddle" alt="글쓰기">
+			<img src="${root}/img/board/btn_reply.gif" class="moveReplyBtn" width="40" height="22"
+			border="0" align="absmiddle" alt="답글">
+		</td>
 		<td style="padding-left: 4px" width="100%"><a href=""
 			target="new"><img src="${root}/img/board/btn_print.gif"
 			width="30" height="18" border="0" align="absmiddle" alt="인쇄"></a></td>
 
-		<td align="right" nowrap><a href="javascript:goPage(1);">최신목록</a>
-		<font color="#c5c5c5">|</font> <a href="javascript:goPage();">목록</a>
-		<font color="#c5c5c5">|</font> <a href="javascript:goBbsRead();"><img
-			src="${root}/img/board/icon_up.gif" border="0" align="absmiddle"
+		<td align="right" nowrap>
+		<label class="firstListBtn">최신목록</label>
+		<font color="#c5c5c5">|</font>
+		<label class="listBtn">목록</label>
+		<font color="#c5c5c5">|</font>
+		
+		<a href="javascript:goBbsRead();">
+		<img src="${root}/img/board/icon_up.gif" border="0" align="absmiddle"
 			hspace="3">윗글</a> <font color="#c5c5c5">|</font> <a
 			href="javascript:goBbsRead();">아랫글<img
 			src="${root}/img/board/icon_down.gif" border="0" align="absmiddle"

@@ -4,5 +4,46 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.kitri.cafe.board.dao.ReboardDao">
+  	<insert id="writeArticle" parameterType="reboardDto">
+  	insert all
+	into board(seq, id, name, email, subject, content, hit, logtime, bcode)
+	values(#{seq}, #{id}, #{name}, #{email}, #{subject}, #{content}, 0, sysdate, #{bcode})
+	into reboard(rseq, seq, ref, lev, step, pseq, reply)
+	values(REBOARD_RSEQ.nextval, #{seq}, #{ref}, 0, 0, 0, 0)
+	select * from dual
+  	</insert>
+  	<select id="viewArticle" parameterType="int" resultType="reboardDto">
+  	SELECT b.seq, b.id, b.name, b.email, b.subject, b.content, b.hit, b.logtime, b.bcode,
+  			r.rseq,  r.ref, r.lev, r.step, r.pseq, r.reply
+  	FROM board b inner join reboard r
+  	ON b.seq = r.seq
+  	WHERE b.seq = #{seq}
+  	</select>
+  	<select id="listArticle" parameterType="map" resultType="reboardDto">
+  	SELECT decode(to_char(sysdate,'yy.mm.dd'),
+            to_char(x.logtime,'yy.mm.dd'), 
+            to_char(x.logtime,'hh24:mi:ss'), 
+            to_char(x.logtime,'yy.mm.dd')) logtime , x.*
+	FROM(
+      
+                    SELECT rownum rang, z.*
+                    FROM(
+                                SELECT b.seq, b.name, b.id, b.email, b.subject, b.content, b.hit, b.logtime, b.bcode,
+                                r.rseq, r.ref, r.lev, r.step, r.pseq, r.reply
+                                FROM board b, reboard r
+                                WHERE b.seq = r.seq
+                                AND b.bcode = #{bcode}
+                                <if test="word != null and word != ''">
+                                	<if test="key == 'subject'">
+                                	AND b.subject like '%'||#{word}||'%'
+                                	</if>
+                                	<if test="key != 'subject'">
+                                	AND b.${key} = #{word}
+                                	</if>
+                                </if>
+                                ORDER BY logtime DESC)z
+                     WHERE rownum &lt;= #{end})x        
+	WHERE x.rang &gt; #{start}
+  	</select>
   
   </mapper>

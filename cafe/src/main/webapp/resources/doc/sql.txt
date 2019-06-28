@@ -7,3 +7,16 @@ into reboard(rseq, seq, ref, lev, step, pseq, reply)
 values(REBOARD_RSEQ.nextval, board_seq.currval,0,0,0,0,0)
 select *
 from dual;
+
+
+
+윗글보기 아랫글보기(일반게시판일때)
+SELECT *
+FROM board
+WHERE bcode = 3
+and seq = (SELECT MAX(seq) FROM board WHERE seq < 310 and bcode = 3)
+
+글이동은 간단하나
+
+글이동을 많이한 후 3페이지에서 5페이지의 글까지 이동했다면
+목록보기를 했을때 5페이지를 반영해야한다 그런 부분이나 답글보기에서 복잡한 부분이 있음.

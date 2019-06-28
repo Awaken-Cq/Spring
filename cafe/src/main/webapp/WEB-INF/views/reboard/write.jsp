@@ -5,10 +5,10 @@
 $(document).ready(function(){
 	
 	$("#writeBtn").click(function(){
-		if($("#subject").val().trim() != null){
+		if($("#subject").val().trim() == null){
 			alert("제목을 입력하세요");
 			return;
-		}else if($("#content").val().trim() != null){
+		}else if($("#content").val().trim() == null){
 			alert("내용을 입력하세요");
 			return;
 		}else{
