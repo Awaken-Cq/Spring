@@ -6,7 +6,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -21,16 +29,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/api")
 public class ApiController {
 	
-	//produces="application/json;charset=UTF-8", 
 		private static final Logger logger = LoggerFactory.getLogger(ApiController.class);
 	
 		@RequestMapping(value="/enter.api", method =RequestMethod.GET)
-		@ResponseBody
-		public String enter(@RequestParam(name = "key") String msg) {
+		public String enter(@RequestParam(name = "key") String msg, Model model) {
 			System.out.println("entered");
 			logger.info(msg);
 			String takapikey = "qldeV%2BL5Ff%2BFi%2BJisZxRFyc1KDitxcPmNkhuwOjk6c7xQDVITEe0oDrh3XFd98iqnW89ky8RMDhQkQIb48h3%2BQ%3D%3D";
-			String sehyunapikey = "eVXAsaFVfjgGhAQfsYx28kYnz0nbDxSuCQlP9TnGl8ntcFd3V%2Byjhkh%2BUfuNwRDIZYBgDnL3Cm0BzM8Ezw73mQ%3D%3D";
 			
 			String periodurlStr = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/areaBasedList?"
 					+ "numOfRows=10&"
@@ -59,20 +64,19 @@ public class ApiController {
 							+ "ServiceKey=" + takapikey;
 			
 			logger.info("----------------------------------");
-			String result = apiexc(periodurlStr);
+			List<Map<String, String>> list = apiexc(periodurlStr);
 			//model.addAttribute("json", result);
-			logger.info(result);
-			logger.info("----------------------------------");
+			model.addAttribute("json" ,list);
 			
-			return result;
-			
-			
+			return "result";
+
 		}
 		
 		
-		public String apiexc(String urlStr) {
-			String result = "";
+		public List<Map<String, String>> apiexc(String urlStr) {
+			String data = "";
 			BufferedReader br = null;
+			List<Map<String, String>> list = null;
 
 			URL url;
 			try {
@@ -83,8 +87,35 @@ public class ApiController {
 				
 				String line;
 				while((line = br.readLine()) != null) {
-					result += result + line + "\n";
+					data += data.concat(line);
 				}
+				//받은 데이터확인
+				System.out.println("data : " + data);
+				//문자열데이터 객체화
+				JSONParser parser = new JSONParser();
+				JSONObject obj = (JSONObject)parser.parse(data);
+				System.out.println("obj : " + obj);
+				//top레벨의 response 키로 데이터 파싱
+				JSONObject parse_response = (JSONObject)obj.get("response");
+				JSONObject parse_body = (JSONObject)parse_response.get("body");
+				System.out.println("body : " + parse_body);
+				JSONObject parse_items = (JSONObject)parse_body.get("items");
+				JSONArray parse_itemlist = (JSONArray)parse_items.get("item");
+				
+				JSONObject item = null;
+				list = new ArrayList<Map<String, String>>();
+				for( int i = 0; i < parse_itemlist.size() ; i++) {
+					Map<String, String> map = new HashMap<String, String>();
+					item = (JSONObject)parse_itemlist.get(i);
+					map.put("title", item.get("title").toString());
+					map.put("contentid", item.get("contentid").toString());
+					map.put("addr1", item.get("addr1").toString());
+					//map.put("firstimage1", (item.get("firstimage1") != null ? item.get("firstimage1").toString() : "x" ));
+					//map.put("firstimage2", (item.get("firstimage2") != null ? item.get("firstimage1").toString() : "x" ));
+					//System.out.println(map.get("firstimage1") + map.get("firstimage2"));
+					list.add(map);
+				}
+				
 				
 				
 			} catch (MalformedURLException e) {
@@ -93,8 +124,11 @@ public class ApiController {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
-			return result;
+			return list;
 			
 		}
 		
