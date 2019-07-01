@@ -5,7 +5,30 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-06-27T22:50:52Z</updated>
+  <updated>2019-07-01T09:35:00Z</updated>
+  <entry>
+    <title>Spring Vault 2.1.3.RELEASE available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/07/01/spring-vault-2-1-3-release-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-07-01:3734</id>
+    <updated>2019-07-01T09:35:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the community, I&amp;#8217;d like to announce the availability of the Spring Vault service release 2.1.3 available from Maven Central.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This release ships with bug fixes and dependency version updates.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For a complete list of changes see the &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.3.RELEASE/changelog.txt"&gt;changelog&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-vault/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-vault/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-vault/docs/2.1.3.RELEASE/reference/html/"&gt;Documentation for 2.1.3.RELEASE&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-vault"&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Greenwich.SR2 is available.</title>
     <link rel="alternate" href="https://spring.io/blog/2019/06/27/spring-cloud-greenwich-sr2-is-available" />
@@ -1074,116 +1097,6 @@ class SpringSessionUsingApacheGeodeConfiguration { ... }&lt;/code&gt;&lt;/pre&gt
 &lt;/div&gt;
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-session-data-geode/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-session-data-geode/pulls"&gt;PR&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Security 5.2.0.M3 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/06/17/spring-security-5-2-0-m3-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Eleftheria Stein-Kousathana</name>
-    </author>
-    <id>tag:spring.io,2019-06-11:3707</id>
-    <updated>2019-06-17T16:04:12Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I¡¯m pleased to announce the release of
-Spring Security 5.2.0.M3! You can find the complete details in the &lt;a href="https://github.com/spring-projects/spring-security/milestone/141?closed=1"&gt;changelog&lt;/a&gt; and the highlights below:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="oauth-2-0"&gt;&lt;a class="anchor" href="#oauth-2-0"&gt;&lt;/a&gt;OAuth 2.0&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6727-support-for-multi-tenancy-in-reactive-resource-server"&gt;&lt;a class="anchor" href="#gh-6727-support-for-multi-tenancy-in-reactive-resource-server"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6727"&gt;gh-6727&lt;/a&gt; - Support for Multi-tenancy in Reactive Resource Server&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6798-support-for-custom-parameters-in-opaque-token"&gt;&lt;a class="anchor" href="#gh-6798-support-for-custom-parameters-in-opaque-token"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6798"&gt;gh-6798&lt;/a&gt; - Support for custom parameters in Opaque Token&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6239-finer-variables-for-oauth2-redirecturitemplate-expansion"&gt;&lt;a class="anchor" href="#gh-6239-finer-variables-for-oauth2-redirecturitemplate-expansion"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6239"&gt;gh-6239&lt;/a&gt; - Finer variables for OAuth2 &lt;code&gt;redirectUriTemplate&lt;/code&gt; expansion&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6863-oauth2-login-has-configurable-authentication-success-handler"&gt;&lt;a class="anchor" href="#gh-6863-oauth2-login-has-configurable-authentication-success-handler"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6863"&gt;gh-6863&lt;/a&gt; - OAuth2 login has configurable authentication success handler&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6832-gh-6849-jwt-and-opaque-token-have-configurable-authentication-manager"&gt;&lt;a class="anchor" href="#gh-6832-gh-6849-jwt-and-opaque-token-have-configurable-authentication-manager"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6832"&gt;gh-6832&lt;/a&gt; &amp;amp; &lt;a href="https://github.com/spring-projects/spring-security/issues/6849"&gt;gh-6849&lt;/a&gt; - JWT and opaque token have configurable authentication manager&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6634-support-for-mock-jwt-in-tests"&gt;&lt;a class="anchor" href="#gh-6634-support-for-mock-jwt-in-tests"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6634"&gt;gh-6634&lt;/a&gt; - Support for mock JWT in tests&lt;/h5&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Similar to other request post processors, &lt;code&gt;jwt()&lt;/code&gt; can be used to establish a &lt;code&gt;SecurityContext&lt;/code&gt; with a &lt;code&gt;JwtAuthenticationToken&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;mockMvc.perform(get("/")
-       .with(jwt(jwt -&amp;gt; jwt.claim("scope", "message:read"))));&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="core"&gt;&lt;a class="anchor" href="#core"&gt;&lt;/a&gt;Core&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6819-add-nohttp-to-build"&gt;&lt;a class="anchor" href="#gh-6819-add-nohttp-to-build"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6819"&gt;gh-6819&lt;/a&gt; - Add nohttp to build&lt;/h5&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;For more information about the nohttp project see this &lt;a href="https://spring.io/blog/2019/06/10/announcing-nohttp"&gt;blog post&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-4469-support-for-path-variables-in-message-expressions"&gt;&lt;a class="anchor" href="#gh-4469-support-for-path-variables-in-message-expressions"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/4469"&gt;gh-4469&lt;/a&gt; - Support for path variables in message expressions&lt;/h5&gt;
-
-&lt;/div&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-6818-configuration-classes-are-proxy-less-and-support-proxybeanmethodsfalse"&gt;&lt;a class="anchor" href="#gh-6818-configuration-classes-are-proxy-less-and-support-proxybeanmethodsfalse"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/6818"&gt;gh-6818&lt;/a&gt; - Configuration classes are proxy-less and support &lt;code&gt;proxyBeanMethods=false&lt;/code&gt;&lt;/h5&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;This feature includes breaking changes to the classes &lt;code&gt;AbstractSecurityWebSocketMessageBrokerConfigurer&lt;/code&gt; and &lt;code&gt;GlobalMethodSecurityConfiguration&lt;/code&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;In order to accomodate these changes, users extending &lt;code&gt;AbstractSecurityWebSocketMessageBrokerConfigurer&lt;/code&gt;, who override the method &lt;code&gt;inboundChannelSecurity&lt;/code&gt; will need to update the method signature to match the following.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
-public ChannelSecurityInterceptor inboundChannelSecurity(
-    MessageSecurityMetadataSource messageSecurityMetadataSource) {
-// implementation
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Similarly, users extending &lt;code&gt;GlobalMethodSecurityConfiguration&lt;/code&gt; who override the method &lt;code&gt;methodSecurityInterceptor&lt;/code&gt; will need to update the method signature to match the following.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="listingblock"&gt;
-&lt;div class="content"&gt;
-&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
-public MethodInterceptor methodSecurityInterceptor(
-    MethodSecurityMetadataSource methodSecurityMetadataSource) {
-// implementation
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="sect1"&gt;
-&lt;h2 id="web"&gt;&lt;a class="anchor" href="#web"&gt;&lt;/a&gt;Web&lt;/h2&gt;
-&lt;div class="sectionbody"&gt;
-&lt;div class="sect4"&gt;
-&lt;h5 id="gh-5038-support-for-x509-reactive"&gt;&lt;a class="anchor" href="#gh-5038-support-for-x509-reactive"&gt;&lt;/a&gt;&lt;a href="https://github.com/spring-projects/spring-security/issues/5038"&gt;gh-5038&lt;/a&gt; - Support for X509 Reactive&lt;/h5&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-security/"&gt;Project Site&lt;/a&gt; |
-&lt;a href="https://docs.spring.io/spring-security/site/docs/5.2.0.M2/reference/htmlsingle/"&gt;Reference&lt;/a&gt;
-| &lt;a href="http://stackoverflow.com/questions/tagged/spring-security"&gt;Help&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

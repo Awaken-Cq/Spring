@@ -78,6 +78,34 @@ $(document).ready(function(){
 	
 	
 	
+$(document).on("click",".mmodifyBtn",function(){
+	$(this).parent().parent().css({'display':'none'}).next().css({'display':''});
+	
+});
+
+$(document).on("click",".memoModifyCancelBtn",function(){
+	$(this).parent().parent().css({'display':'none'}).prev().css({'display':''});
+	
+});
+
+$(document).on("click",".memoModifyBtn",function(){
+// 	var jsonObj = JSON.stringify({"seq": seq ,"resq":resq});
+	$.ajax({
+		url: '${root}/memo/update/'+ $(this).parent("td").attr("data-mseq") +
+		'/'+ $(this).parent().prev().children().val(),
+		type: 'PUT',
+		dataType: 'json',
+// 		data:jsonObj,
+		success:function(response){
+			makeMemoList(response);
+		}
+		
+		
+	});
+	
+});
+ 
+
 $(document).on("click",".mdeleteBtn",function(){
 		
 		$.ajax({
@@ -137,12 +165,13 @@ function makeMemoList(memos){
 	
 	memostr += '	</tr>';
 	memostr += '	<tr style="display:none;">';
-	memostr += '		<td colspan="3" style="padding: 10px">';
+	memostr += '		<td>'+memo.name+'</td>';
+	memostr += '		<td colspan="2" style="padding: 10px">';
 	memostr += '		<textarea class="mcontent" cols="160" rows="5">'+memo.mcontent+'</textarea>';
 	memostr += '		</td>';
 	memostr += '		<td width="100" style="padding: 10px">';
-	memostr += '		<input type="button" class="memoModifyBtn" value="글수정"/>';
-	memostr += '		<input type="button" class="memoModifyCancelBtn" value="취소"/>';
+	memostr += '			<input type="button" class="memoModifyBtn" value="글수정"/>';
+	memostr += '			<input type="button" class="memoModifyCancelBtn" value="취소"/>';
 	memostr += '		</td>';
 	memostr += '	</tr>';
 	

@@ -75,4 +75,20 @@ public class MemoController {
 		return json;
 	}
 	
+	@RequestMapping(value= {"/{mseq}/{mcontent}"}, method = RequestMethod.PUT)
+	public String update(@PathVariable(name="mseq")int mseq, @PathVariable(name="mcontent")String mcontent, HttpSession session
+			) {
+//		System.out.println(memoDto.getMcontent());
+		MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+		String json = "";
+//		if(memberDto != null) {
+//			memoDto.setId(memberDto.getId());
+//			memoDto.setName(memberDto.getName());
+//			memoService.writeMemo(memoDto);
+//			json = memoService.listMemo(memoDto.getSeq());
+//		}
+//		System.out.println(memoDto.toString());
+		System.out.println(json);
+		return json;
+	}
 }
