@@ -8,16 +8,16 @@ import com.kitri.cafe.board.model.MemoDto;
 public interface MemoService {
 
 	//댓글목록()
-	List<MemoDto> listMemo(Map<String, String> parameter);
+	String listMemo(int seq);
 	
 	//글쓰기(글 작성 후 글보기로 넘어가기 위해 return int)
 	void writeMemo(MemoDto memoDto);
 	
 	//글수정
-	void modifyMemo(MemoDto momeDto);
+	String modifyMemo(MemoDto memoDto);
 	
 	//글삭제
-	void deleteMemo(int mseq);
+	String deleteMemo(int seq, int mseq);
 	
 	
 }

@@ -14,6 +14,7 @@
 		<mybatis-version>3.5.1</mybatis-version>
 		<mybatis-spring-version>2.0.1</mybatis-spring-version>
 		<json-version>20180813</json-version>
+		<jackson-databind-version>2.9.9</jackson-databind-version>
 		
 		
 		<org.aspectj-version>1.6.10</org.aspectj-version>
@@ -50,7 +51,12 @@
 		    <artifactId>json</artifactId>
 		    <version>${json-version}</version>
 		</dependency>
-				
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson-databind-version}</version>
+		</dependency>
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

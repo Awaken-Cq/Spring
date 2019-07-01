@@ -15,8 +15,7 @@ $(function() {
 	$.ajax({
 		url : "${root}/api/enter.api",
 		type : "get",
-		
-		dataType : "json",
+		dataType : "HTML",
 		data : {"key":"keykey"},
 		success :function(result){
 			console.log("넘어옴");
