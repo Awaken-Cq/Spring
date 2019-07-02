@@ -42,7 +42,7 @@ public class MemoServiceImpl implements MemoService {
 
 	@Override
 	public String modifyMemo(MemoDto memoDto) {
-		
+		sqlSession.getMapper(MemoDao.class).modifyMemo(memoDto);
 		return "";
 	}
 

@@ -75,19 +75,23 @@ public class MemoController {
 		return json;
 	}
 	
-	@RequestMapping(value= {"/{mseq}/{mcontent}"}, method = RequestMethod.PUT)
-	public String update(@PathVariable(name="mseq")int mseq, @PathVariable(name="mcontent")String mcontent, HttpSession session
-			) {
+	@RequestMapping(value= {"/{seq}/{mseq}/{mcontent}"}, method = RequestMethod.PUT)
+	public String update(@PathVariable(name="seq")int seq, @PathVariable(name="mseq")int mseq, 
+						@PathVariable(name="mcontent")String mcontent, HttpSession session) {
+		System.out.println("수정할 것입니다 " + mseq + "/" + mcontent);
 //		System.out.println(memoDto.getMcontent());
 		MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
 		String json = "";
-//		if(memberDto != null) {
+		if(memberDto != null) {
+			MemoDto memoDto = new MemoDto();
 //			memoDto.setId(memberDto.getId());
 //			memoDto.setName(memberDto.getName());
-//			memoService.writeMemo(memoDto);
-//			json = memoService.listMemo(memoDto.getSeq());
-//		}
-//		System.out.println(memoDto.toString());
+			//memoDto.setSeq(seq);
+			memoDto.setMseq(mseq);
+			memoDto.setMcontent(mcontent);
+			memoService.modifyMemo(memoDto);
+			json = memoService.listMemo(seq);
+		}
 		System.out.println(json);
 		return json;
 	}

@@ -18,5 +18,9 @@
   DELETE FROM memo
   WHERE mseq = #{mseq}
   </delete>
-  
+  <update id="modifyMemo" parameterType="memoDto">
+  UPDATE memo
+  SET mcontent = #{mcontent}
+  WHERE mseq = #{mseq}
+  </update>
   </mapper>

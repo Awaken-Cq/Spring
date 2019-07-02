@@ -69,7 +69,7 @@ $(document).ready(function(){
 					data : param,
 					success : function(response){
 						makeMemoList(response);
-						$("#content").val('');
+						$(".mcontent").val('');
 					}
 				});
 			}
@@ -89,15 +89,17 @@ $(document).on("click",".memoModifyCancelBtn",function(){
 });
 
 $(document).on("click",".memoModifyBtn",function(){
-// 	var jsonObj = JSON.stringify({"seq": seq ,"resq":resq});
+	alert("2 : "+$(this).parent().prev().attr("data-mseq"));
+	alert("1 : "+$(this).parent().prev().children().val());
 	$.ajax({
-		url: '${root}/memo/update/'+ $(this).parent("td").attr("data-mseq") +
+		url: '${root}/memo/'+ $(this).parent().prev().attr("data-seq") +'/'+ $(this).parent().prev().attr("data-mseq")+
 		'/'+ $(this).parent().prev().children().val(),
 		type: 'PUT',
+		contentType : 'application/json;charset=UTF-8',
 		dataType: 'json',
-// 		data:jsonObj,
 		success:function(response){
 			makeMemoList(response);
+			$(this).parent().parent().css({'display':'none'}).prev().css({'display':''});
 		}
 		
 		
@@ -116,7 +118,7 @@ $(document).on("click",".mdeleteBtn",function(){
 			dataType : 'json',
 			success : function(response){
 				makeMemoList(response);
-				$("#content").val('');
+				$(".content").val('');
 			}
 	});
 	
@@ -166,7 +168,7 @@ function makeMemoList(memos){
 	memostr += '	</tr>';
 	memostr += '	<tr style="display:none;">';
 	memostr += '		<td>'+memo.name+'</td>';
-	memostr += '		<td colspan="2" style="padding: 10px">';
+	memostr += '		<td colspan="2" style="padding: 10px" data-seq ="' + memo.seq+'" data-mseq ="' + memo.mseq+'">';
 	memostr += '		<textarea class="mcontent" cols="160" rows="5">'+memo.mcontent+'</textarea>';
 	memostr += '		</td>';
 	memostr += '		<td width="100" style="padding: 10px">';

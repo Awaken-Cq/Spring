@@ -1,19 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/commons/template/top.jsp" %>
+<%@ include file="/WEB-INF/views/commons/logincheck.jsp" %>
 <script type="text/javascript">
-function writeArticle(){
-	if(document.writeForm.subject.value == ""){
-		alert("제목을 입력하세요");
-		return;
-	}else if(document.writeForm.content.value == ""){
-		alert("내용을 입력하세요");
-		return;
-	}else{
-		document.writeForm.action = "";
-		document.writeForm.submit();
-	}
-}
+$(document).ready(function(){
+	
+	$("#writeBtn").click(function(){
+		if($("#subject").val().trim() == null){
+			alert("제목을 입력하세요");
+			return;
+		}else if($("#content").val().trim() == null){
+			alert("내용을 입력하세요");
+			return;
+		}else{
+			$("#writeForm").attr("action","${root}/album/write").submit();
+		}
+		
+	});
+});
+
 </script>
 <!-- title -->
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -43,13 +48,13 @@ function writeArticle(){
 <br>
 
 <form id="writeForm" name="writeForm" method="post" action=""
-	style="margin: 0px">
+	enctype="multipart/form-data" style="margin: 0px">
 <div id="attach_file_hdn"></div>
 
-<input type="hidden" name="" value="">
-<input type="hidden" name="" value="">
-<input type="hidden" name="" value="">
-<input type="hidden" name="" value="">
+<input type="hidden" name="bcode" value="${parameter.bcode}">
+<input type="hidden" name="pg" value="1">
+<input type="hidden" name="key" value="">
+<input type="hidden" name="word" value="">
 
 <table border="0" cellpadding="5" cellspacing="0" width="630"
 	style="table-layout: fixed">
@@ -68,8 +73,16 @@ function writeArticle(){
 	<tr>
 		<td width="620" nowrap style="padding-left: 8px; padding-top: 10px"
 			colspan="5"><img src="${root}/img/board/e_dot.gif" width="4"
-			height="4" border="0" align="absmiddle"> <b>글내용</b> <textarea
+			height="4" border="0" align="absmiddle"> <b>글내용</b> <textarea id="content"
 			name="content" class="inp_02" cols="67" rows="25" scrollbars="no"></textarea>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="95" nowrap style="padding-left: 8px; padding-top: 10px"><img
+			src="${root}/img/board/e_dot.gif" width="4" height="4" border="0"
+			align="absmiddle"> <b>사진 첨부</b></td>
+		<td colspan="5"><input type="file" id="picture" name="picture"/>
+		
 		</td>
 	</tr>
 </table>
@@ -87,9 +100,9 @@ function writeArticle(){
 		<td height="10" style="padding: 0px"></td>
 	</tr>
 	<tr>
-		<td align="center"><a href="javascript:writeArticle();"><img
+		<td align="center"><img id="writeBtn"
 			src="${root}/img/board/btn_register.gif" width="42" height="21"
-			border="0" name="register" value="" alt="등록"></a> <a
+			border="0" name="register" value="" alt="등록"> <a
 			href="javascript:history.back();"><img
 			src="${root}/img/board/b_cancel.gif" width="42" height="21"
 			border="0" name="cencel" value="" alt="취소"></a></td>
