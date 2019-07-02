@@ -1,16 +1,89 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="root" value="${pageContext.request.contextPath }"/>
 <%@ include file="/WEB-INF/views/commons/template/top.jsp" %>
+<%@ include file="/WEB-INF/views/commons/board_common.jsp" %>
 
+<c:set var="root" value="${pageContext.request.contextPath }"/>
+<script>
+$(document).ready(function(){
+	
+	$(".moveWriteBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("1");
+		$("#key").val("");
+		$("#word").val("");
+		$("#seq").val("");
+		$("#commonForm").attr("method","GET").attr("action","${root}/album/write").submit();
+	});
 
+	
+	
+	$(".moveReplyBtn").click(function(){
+		
+		
+	});
+	
+	$(".viewBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("${pg}");
+		$("#key").val("${key}");
+		$("#word").val("${word}");
+		$("#seq").val($(this).attr("data-seq"));
+		$("#commonForm").attr("method","GET").attr("action","${root}/album/view").submit();
+	});
+	
+	$(".moveListBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val($(this).attr("data-pg"));
+		$("#key").val("${key}");
+		$("#word").val("${word}");
+		$("#commonForm").attr("method","GET").attr("action","${root}/album/list").submit();
+		
+	});
+	
+	$(".firstListBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("1");
+		$("#key").val("");
+		$("#word").val("");
+		$("#commonForm").attr("method","GET").attr("action","${root}/album/list").submit();
+		
+	});
+	
+	$("#searchBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("1");
+		$("#key").val($("#skey").val());
+		$("#word").val($("#sword").val());
+		$("#commonForm").attr("method","GET").attr("action","${root}/album/list").submit();
+		
+	});
+	
+	$("#myListBtn").click(function(){
+		
+		$("#bcode").val("${bcode}");
+		$("#pg").val("1");
+		$("#key").val("id");
+		$("#word").val("${userInfo.id}");
+		$("#commonForm").attr("method","GET").attr("action","${root}/album/list").submit();
+		
+});
+	
+	
+});
+</script>
 <!-- title start -->
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td><img src="${root}/img/board/m_icon_board.gif" width="9"
 			height="9" border="0" align="absmiddle" style="margin-top: -2px">
-		<b>자유게시판</b> &nbsp;<font style="font-size: 8pt">|</font>&nbsp; 자유로운 글을
+		<b>사진게시판</b> &nbsp;<font style="font-size: 8pt">|</font>&nbsp; 자유로운 글과 사진을
 		올리는 공간입니다<br>
 		</td>
 		<td align="right"></td>
@@ -24,13 +97,13 @@
 <!-- bbs start -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 	<tr valign="bottom">
-		<td nowrap><a href=""><img
-			src="${root}/img/board/btn_write_01.gif" width="64" height="22"
-			border="0" align="absmiddle" alt="글쓰기"></a></td>
+		<td nowrap><label><img
+			src="${root}/img/board/btn_write_01.gif" class="moveWriteBtn" width="64" height="22"
+			border="0" align="absmiddle" alt="글쓰기"></label></td>
 
 		<td width="100%" style="padding-left: 6px" valign="bottom">새글 <b><font
-			class="text_acc_02">새글 수를 출력 하는 부분</font></b> / 전체 <font
-			class="text_acc_02">전체 글수를 출력 하는 부분</font></td>
+			class="text_acc_02">${navigator.newArticleCount }</font></b> / 전체 <font
+			class="text_acc_02">${navigator.totalArticleCount }</font></td>
 		<td width="300" nowrap>
 		<div align="right"></div>
 		</td>
@@ -68,28 +141,43 @@
 
 	<!-- 공지기능 적용끝  -->
 	<tr>
-		<td align="center" class="text_gray">글번호 출력하는 부분</td>
+<c:forEach var="article" items="${articleList}" varStatus="vstatus">
+	<td>
+	<img class="viewBtn" src="${root}/upload/album/${article.saveFolder}/${article.savePicture}"
+	data-seq="${article.seq }" width="200"/>
+${article.subject}<br>
+${article.name}<br>
+${article.logtime}<br>
+	</td>
+	<c:if test="${vstatus.count%4 == 0 }">
+	</tr>
+	<tr>
+	</c:if>
+</c:forEach>
+</tr>
+<%-- 		<td align="center" class="text_gray">${article.seq}</td>
 		<td></td>
 		<td nowrap class="onetext" style="padding-right: 5px"></td>
 		<!--td>
      
      </td-->
-		<td style="word-break: break-all;"><a href=""
-			class="link_board_03">글 제목을 출력 하는 부분&nbsp;&nbsp;&nbsp;</a></td>
+		<td style="word-break: break-all;">
+			<img src="${root}/img/board/blank.gif" width="${article.lev*15}" height="1">
+			<label class="viewBtn" data-seq="${article.seq}">${article.subject.replace('<','&lt;')}&nbsp;&nbsp;&nbsp;</label>>
+		</td>
 		<td></td>
 		<td style="word-break: break-all;"><a href="javascript:;"
-			onClick="showSideView();" class="link_board_04">작성자를 출력 하는 부분</a></td>
+			onClick="showSideView();" class="link_board_04">${article.name}</a></td>
 		<td></td>
-		<td align="center" class="text_gray">조회수를 출력 하는 부분</td>
+		<td align="center" class="text_gray">${article.hit}</td>
 		<td></td>
-		<td align="center" class="text_gray">작성 일자를 출력 하는 부분</td>
+		<td align="center" class="text_gray">${article.logtime}</td>
 	</tr>
 
 	<tr>
 		<td bgcolor="#ededed" height="1" colspan="11"
-			style="overflow: hidden; padding: 0px"></td>
-	</tr>
-
+			style="overflow: hidden; padding: 0px"></td> --%>
+	
 
 	<tr>
 		<td class="bg_board_title_02" height="1" colspan="11"
@@ -105,11 +193,11 @@
 		<td colspan="3" height="5"></td>
 	</tr>
 	<tr valign="top">
-		<td nowrap><a href=""><img
-			src="${root}/img/board/btn_write_01.gif" width="64" height="22"
-			border="0" align="absmiddle" alt="글쓰기"></a></td>
-		<td width="100%" align="center"><!--PAGE--> 페이지 분류를 하는 부분</td>
-		<td nowrap class="stext"><b>현재 페이지 출력 부분</b> / 총 페이지수를 출력 하는 부분
+		<td nowrap><label><img
+			src="${root}/img/board/btn_write_01.gif" class="moveWriteBtn" width="64" height="22"
+			border="0" align="absmiddle" alt="글쓰기"></label></td>
+		<td width="100%" align="center"><!--PAGE--> ${navigator.navigator }</td>
+		<td nowrap class="stext"><b>${navigator.pageNo }</b> / ${navigator.totalPageCount }
 		pages</td>
 	</tr>
 </table>
@@ -117,29 +205,27 @@
 <!-- 하단 페이징 -->
 
 <!-- 검색 영역-->
-<form name="searchForm" method="post" action="javascript:goBbsSearch();"
-	style="margin: 0px"><input type="hidden" name="" value="">
+
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 	<tr>
 		<td colspan="3" height="10"></td>
 	</tr>
 	<tr>
 		<td width="50%"></td>
-		<td nowrap><select name="item" onchange="javascript:ch()"
-			class="inp">
+		<td nowrap>
+		<select id="skey" name="key"	class="inp">
 			<option value="subject">글제목
-			<option value="writer">글쓴이
-			<option value="no">글번호
-		</select> <span id="sear1"> <input type="text" name="query" size="22"
-			class="inp" style="margin-top: -19px;"> </span> <span id="sear2"
-			style="display: none;"> <select name="head" class="inp">
-			<option value="말머리선택">말머리선택
-		</select> </span> <a href="javascript:goBbsSearch();"><img
-			src="${root}/img/board/sbtn_s.gif" width="32" height="18"
-			border="0" align="absmiddle" alt="검색"></a> <a
-			href="javascript:goMyList('안효인')"><img
-			src="${root}/img/board/sbtn_mytext.gif" width="82" height="20"
-			align="absmiddle" alt="내가 쓴 글 보기"></a><br>
+			<option value="name">글쓴이
+			<option value="seq">글번호
+		</select> 
+		<span id="sear1"> <input type="text" id="sword" size="22"
+			class="inp" style="margin-top: -19px;"> </span>
+		<img src="${root}/img/board/sbtn_s.gif" id="searchBtn" width="32" height="18"
+			border="0" align="absmiddle" alt="검색">
+		<c:if test="${userInfo != null }">
+			<img src="${root}/img/board/sbtn_mytext.gif" id="myListBtn" width="82" height="20"
+				align="absmiddle" alt="내가 쓴 글 보기">
+		</c:if><br>
 		</td>
 		<td width="50%" align="right"><a href="#"><img
 			src="${root}/img/board/sbtn_top.gif" width="24" height="11"
@@ -147,5 +233,5 @@
 		</td>
 	</tr>
 </table>
-</form>
+
 <%@ include file="/WEB-INF/views/commons/template/bottom.jsp" %>

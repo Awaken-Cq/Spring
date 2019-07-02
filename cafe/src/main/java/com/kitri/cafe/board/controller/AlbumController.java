@@ -5,10 +5,12 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -26,6 +28,7 @@ import com.kitri.cafe.board.model.ReboardDto;
 import com.kitri.cafe.board.service.AlbumService;
 import com.kitri.cafe.common.service.CommonService;
 import com.kitri.cafe.member.model.MemberDto;
+import com.kitri.util.PageNavigation;
 
 @Controller
 @RequestMapping("/album")
@@ -110,4 +113,46 @@ public class AlbumController {
 		return "album/writeok";
 	}
 	
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public void list(@RequestParam Map<String, String> parameter, Model model, HttpServletRequest request) {
+		logger.info("listget :" + parameter);
+
+		List<AlbumDto> list = albumService.listArticle(parameter);
+		PageNavigation pageNavigation = commonService.getPageNavigation(parameter);
+		pageNavigation.setRoot(request.getContextPath());
+		pageNavigation.makeNavigator();
+		
+		model.addAttribute("parameter",parameter);
+		model.addAttribute("articleList",list);
+		model.addAttribute("navigator", pageNavigation);
+		
+	}
+	
+	@RequestMapping(value="/view", method=RequestMethod.GET)
+	public String view(@RequestParam("seq") int seq,
+			@RequestParam Map<String, String> parameter, Model model, HttpSession session) {
+		logger.info("viewget :" + parameter);
+		String path = "";
+		
+		//로그인 검사
+		MemberDto memberDto = (MemberDto) session.getAttribute("userInfo");
+		if(memberDto != null) {
+			//조횟수 선 증가
+			//commonService.updateHit(seq);
+			//조횟수 증가시킨 reboardDto select
+			AlbumDto albumDto = albumService.viewArticle(seq);
+			
+		//dto null검사
+			
+			
+			model.addAttribute("article", albumDto);
+			model.addAttribute("parameter",parameter);
+			path = "album/view";
+		}else {
+			path = "redirect:/index.jsp";
+		}
+		
+		return path;
+		
+	}
 }

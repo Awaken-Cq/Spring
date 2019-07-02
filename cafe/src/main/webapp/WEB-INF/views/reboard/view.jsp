@@ -69,7 +69,7 @@ $(document).ready(function(){
 					data : param,
 					success : function(response){
 						makeMemoList(response);
-						$(".mcontent").val('');
+						$("#mcontent").val('');
 					}
 				});
 			}
