@@ -5,7 +5,33 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2019-07-01T16:57:00Z</updated>
+  <updated>2019-07-03T01:26:03Z</updated>
+  <entry>
+    <title>This Week in Spring - July 2nd, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/07/03/this-week-in-spring-july-2nd-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-07-03:3737</id>
+    <updated>2019-07-03T01:26:03Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m sunny summer-time San Francisco indulging in a little downtime. Last week was a doozy! I visited Tampa, Flordia; Paris, France; and finally Santiago, Dominican Republic. Later this week, after the 4th of July holiday here in the States, I&amp;rsquo;ll head on over to Medellin, Columbia for JConf Columbia; Chicago, Illinois for the epic SpringOne Tour Chicago event; and then Lima, Peru for the JConf Peru event. &lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m so looking forward to a few weeks of fun talking to amazing developers around the globe. If you&amp;rsquo;re around, as usual, don&amp;rsquo;t hesitate to reach out to me on &lt;a href="http://twitter.com/Starbuxman"&gt;@starbuxman&lt;/a&gt; on Twitter.&lt;/p&gt;
+&lt;p&gt;We&amp;rsquo;ve got a ton of good stuff to get to this week so let&amp;rsquo;s dive right in!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/07/01/hiding-services-runtime-discovery-with-spring-cloud-gateway"&gt;Hiding Services &amp;amp; Runtime Discovery with Spring Cloud Gateway&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/07/01/spring-cloud-open-service-broker-3-1-0-m1-released"&gt;Spring Cloud Open Service Broker 3.1.0.M1 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/07/01/spring-cloud-open-service-broker-3-0-3-released"&gt;Spring Cloud Open Service Broker 3.0.3 Released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/07/01/spring-vault-2-1-3-release-available"&gt;Spring Vault 2.1.3.RELEASE available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/06/27/spring-cloud-greenwich-sr2-is-available"&gt;Spring Cloud Greenwich.SR2 is available.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Hi Spring fans! In last week&amp;rsquo;s a &lt;a href="https://spring.io/blog/2019/06/27/a-bootiful-podcast-datadog-s-jason-yee-on-observability-operations-metrics-kubernetes-language-and-more"&gt;&lt;em&gt;Bootiful Podcast&lt;/em&gt;, I talk to Datadog&amp;rsquo;s Jason Yee on observability, operations, metrics, Kubernetes, language and more&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/06/26/spring-tips-season-6-recap"&gt;Spring Tips - Season 6 Recap&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;What is PaaS? Platform-as-a-Service Types Explained&lt;/em&gt; &lt;a href="https://www.javacodegeeks.com/2019/06/paas-platform-service-types-explained.html"&gt; on the Java Code Geeks blog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This is an interesting thread over on Twitter looking at &lt;a href="https://twitter.com/dormaindrewitz/status/1143972958173450240?s=12"&gt;why you might choose RabbitMQ over Apache Kafka and vice-versa&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Have you registered for &lt;a href="https://twitter.com/springcentral/status/1143984541117353985"&gt;SpringOne Platform 2019?&lt;/a&gt; Do not miss this year&amp;rsquo;s bigger-and-better-than-ever edition of SpringOne Platform!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Hiding Services &amp; Runtime Discovery with Spring Cloud Gateway</title>
     <link rel="alternate" href="https://spring.io/blog/2019/07/01/hiding-services-runtime-discovery-with-spring-cloud-gateway" />
@@ -939,33 +965,6 @@ public class RedisSessionConfiguration {
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Open Service Broker 3.0.2 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2019/06/18/spring-cloud-open-service-broker-3-0-2-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Roy Clarkson</name>
-    </author>
-    <id>tag:spring.io,2019-06-18:3717</id>
-    <updated>2019-06-18T13:53:00Z</updated>
-    <content type="html">&lt;p&gt;We are pleased to announce the 3.0.2 release of Spring Cloud Open Service Broker. This is a maintenance release that includes the following &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker/issues?q=is%3Aclosed+milestone%3A3.0.2.RELEASE"&gt;updates&lt;/a&gt;:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Return correct HTTP status when the X-Broker-API-Version header doesn&amp;rsquo;t exist&lt;/li&gt;
-  &lt;li&gt;Return correct HTTP status when missing certain required fields and query parameters&lt;/li&gt;
-  &lt;li&gt;Fix support for service instance binding getLastOperation&lt;/li&gt;
-  &lt;li&gt;Return correct HTTP status when attempting to retrieve non-existant service instance or service instance binding&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Include the following Spring Boot starter:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint"&gt;&amp;lt;dependency&amp;gt;&#xD;
-  &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt;&#xD;
-  &amp;lt;artifactId&amp;gt;spring-cloud-starter-open-service-broker&amp;lt;/artifactId&amp;gt;&#xD;
-  &amp;lt;version&amp;gt;3.0.2.RELEASE&amp;lt;/version&amp;gt;&#xD;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Spring Cloud Open Service Broker is a framework for building Spring Boot applications that implement the Open Service Broker API. The &lt;a href="https://www.openservicebrokerapi.org"&gt;Open Service Broker API&lt;/a&gt; project allows developers to deliver services to applications running within cloud native platforms such as Cloud Foundry, Kubernetes, and OpenShift.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://spring.io/projects/spring-cloud-open-service-broker"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-cloud/spring-cloud-open-service-broker"&gt;GitHub&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.2.RELEASE/reference/html5"&gt;Reference Doc&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-cloud-open-service-broker/docs/3.0.2.RELEASE/apidocs/"&gt;API Doc&lt;/a&gt; &lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
