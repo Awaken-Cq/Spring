@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.kitri.cafe.admin.board.model.CategoryDto"/>
 <fullyQualifiedTypeName name="com.kitri.cafe.board.controller.AlbumController"/>
 <fullyQualifiedTypeName name="com.kitri.cafe.board.service.AlbumService"/>
 <fullyQualifiedTypeName name="com.kitri.cafe.board.service.BbsService"/>
@@ -15,7 +14,6 @@
 <fullyQualifiedTypeName name="com.fasterxml.jackson.core.JsonParser"/>
 <fullyQualifiedTypeName name="com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor"/>
 <fullyQualifiedTypeName name="com.kitri.cafe.board.service.MemoServiceImpl"/>
-<fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
@@ -24,7 +22,6 @@
 <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
 <fullyQualifiedTypeName name="com.kitri.hotpicks.contents.service.contentsService"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.net.MalformedURLException"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.ParseException"/>
@@ -48,16 +45,19 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="org.json.simple.parser.JSONParser"/>
-<fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
-<fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
 <fullyQualifiedTypeName name="com.kitri.hotpicks.contents.model.ContentsDto"/>
 <fullyQualifiedTypeName name="com.kitri.hotpicks.contents.dao.ContentsDao"/>
 <fullyQualifiedTypeName name="com.kitri.hotpicks.contents.model.SidoDto"/>
 <fullyQualifiedTypeName name="com.kitri.hotpicks.contents.model.ContentsTypeDto"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
 <fullyQualifiedTypeName name="com.kitri.hotpicks.contents.model.SigunguDto"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+<fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="com.kitri.hotpicks.contents.model.ContentsImageDto"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
 </qualifiedTypeNameHistroy>
